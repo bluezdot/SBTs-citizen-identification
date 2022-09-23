@@ -1,0 +1,30 @@
+{
+  "name": "sbts-citizen-identification",
+  "version": "1.0.0",
+  "description": "Soulbound Token to represent personal ownership in the real world on blockchain network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluezdot/SBTs-citizen-identification.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bluezdot/SBTs-citizen-identification/issues"
+  },
+  "homepage": "https://github.com/bluezdot/SBTs-citizen-identification#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.1.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "ethers": "^5.0.0",
+    "hardhat": "^2.11.2",
+    "node-fetch": "^2.6.7"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "dotenv": "^16.0.2"
+  }
+}
