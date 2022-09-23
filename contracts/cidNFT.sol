@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.1;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -15,6 +15,8 @@ contract cidNFT is ERC721 {
         currentTokenId.increment();
         uint256 newItemId = currentTokenId.current();
         _safeMint(recipient, newItemId);
+        // _setTokenURI(newItemId, tokenURI); 
+        // https://flic.kr/p/2nNufGH
         return newItemId;
     }
 }
