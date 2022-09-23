@@ -19,4 +19,13 @@ contract cidNFT is ERC721 {
         // https://flic.kr/p/2nNufGH
         return newItemId;
     }
+    
+    // Override function _transfer (this function is called from transferFrom() and safeTransferFrom())
+    function _transfer(
+            address from,
+            address to,
+            uint256 tokenId
+        ) internal override virtual {
+            require(0 == 1, "SBTs is non-transferable token");
+        }
 }
