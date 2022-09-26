@@ -11,3 +11,5 @@ A Smart Contract of Soulbound Token to represent personal ownership in the real 
 3.2 go to Account Details > Export Private Key <br />
 3.3 Be aware of NEVER putting real Ether into testing accounts <br />
 write it to .env like: ACCOUNT_PRIVATE_KEY = "YOUR_METAMASK_KEY"
+
+=> npx hardhat compile
