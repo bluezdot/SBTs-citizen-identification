@@ -11,6 +11,7 @@ async function main() {
     const NFT = await ethers.getContractFactory("cidNFT");
     // calling deploy() will return an async Promise that we can await on 
     const nft = await NFT.deploy();
+
     await nft.deployed()
 
 
