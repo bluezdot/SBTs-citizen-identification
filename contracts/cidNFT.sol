@@ -32,21 +32,6 @@ contract cidNFT is ERC721, Ownable{
         return newItemId;
     }
 
-// CHO A GIANG NE
-    function mintToFree(address recipient, string memory tokenURI) public returns (uint256) {
-        currentTokenId.increment();
-        uint256 newItemId = currentTokenId.current();
-        _safeMint(recipient, newItemId);
-        _setTokenURI(newItemId, tokenURI); 
-        // https://flic.kr/p/2nNufGH
-        return newItemId;
-    }
-
-    function returnABC(address recipient, string memory tokenURI) public returns (uint256) {
-        return 35;
-    }
-// CHO A GIANG NE
-
     function getSbtByOwner(address _owner) external view returns(uint[] memory) {
     uint[] memory result = new uint[](balanceOf(_owner));
     uint counter = 0;
