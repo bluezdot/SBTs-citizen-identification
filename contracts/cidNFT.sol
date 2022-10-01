@@ -13,8 +13,8 @@ contract cidNFT is ERC721, Ownable{
     // Mapping from tokenId to tokenURI
     mapping(uint => string) public tokenURIs;
 
-    // Mapping
-    mapping (uint => address) sbtToOwner;
+    // Mapping address -> list of SBTs
+    mapping (address => uint[]) sbtToOwner;
 
     uint sbtCount = 0;
     
@@ -26,22 +26,14 @@ contract cidNFT is ERC721, Ownable{
         uint256 newItemId = currentTokenId.current();
         _safeMint(recipient, newItemId);
         _setTokenURI(newItemId, tokenURI); 
-        // https://flic.kr/p/2nNufGH
-        sbtToOwner[newItemId] = recipient;
+        // https://flic.kr/p/2nNuf(GH
+        sbtToOwner[recipient].push(newItemId);
         sbtCount ++;
         return newItemId;
     }
 
     function getSbtByOwner(address _owner) external view returns(uint[] memory) {
-    uint[] memory result = new uint[](balanceOf(_owner));
-    uint counter = 0;
-    for (uint i = 0; i < sbtCount; i++) {
-      if (sbtToOwner[i] == _owner) {
-        result[counter] = i;
-        counter++;
-      }
-    }
-    return result;
+        return sbtToOwner[_owner];
     }
 
     // No more function _setTokenURI
